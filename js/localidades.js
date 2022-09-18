@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
 
-    $('#cidade').hide();
+
 
     $.ajax({
         type: 'GET',
@@ -16,5 +16,16 @@ $(document).ready(function() {
         }
     })
 });
-
+s
 // Mudando a opção uf
+$('#uf').change(function(e) {
+    e.preventDefault();
+    $("#Cidade").empty();
+    var uf = $('#uf').val();
+
+    if (uf == 'Estados') {
+        var option = "<option>Cidades</option>"
+        $("#local").append(option)
+        return
+    }
+})
